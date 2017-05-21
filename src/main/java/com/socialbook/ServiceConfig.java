@@ -1,7 +1,16 @@
 package com.socialbook;
 
-/**
- * Created by audri on 5/21/2017.
- */
-public class ServiceConfig {
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configurers.GlobalAuthenticationConfigurerAdapter;
+
+@Configuration
+public class ServiceConfig  extends GlobalAuthenticationConfigurerAdapter {
+
+    @Override
+    public void init(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("agoldberg").password("pass1").roles("USER").and()
+                .withUser("bgoldberg").password("pass2").roles("USER", "OPERATOR");
+    }
 }
