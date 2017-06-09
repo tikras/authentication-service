@@ -6,7 +6,7 @@
 	<groupId>com.socialbook</groupId>
 	<artifactId>authentication-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>authentication-service</name>
 	<description>Authentication service</description>
@@ -83,16 +83,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<outputDirectory>target</outputDirectory>
-					<warName>ROOT</warName>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
